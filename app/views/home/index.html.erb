@@ -274,6 +274,23 @@
 			}
 
 			})
+			document.addEventListener("ontouchstart",function(event) {
+
+				if(dragon.y == 280)
+				{
+					playJumpAudio();
+					dragon.speedY = -23;
+				}
+
+				var isMusicPlaying = false;
+
+			if(!isMusicPlaying){
+				isMusicPlaying=true;
+				if(flag)
+		    aud.play();
+			}
+
+			})
 
 
 			interval=setInterval(update,50);
