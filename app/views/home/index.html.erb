@@ -1,6 +1,6 @@
 <html>
 	<body>
-		<canvas width="700" height="320" style="margin-top: 30px;
+		<canvas width="700" height="320" style="margin-top: 10px;
 			display: block; margin: auto;" id="mycanvas">
 		</canvas>
 		<div style="text-align: center;">
@@ -58,7 +58,7 @@
 			dragon.y=280;
 			dragon.speedX = 0;
 			dragon.speedY = 0;
-			var gravity = 2.08;
+			var gravity = 5;
 
 			dragon.move = function(){
 				//
@@ -246,7 +246,7 @@
 				if(dragon.y == 280)
 				{
 					playJumpAudio();
-					dragon.speedY = -23;
+					dragon.speedY = -35;
 				}
 			}
 			var isMusicPlaying = false;
@@ -263,7 +263,7 @@
 				if(dragon.y == 280)
 				{
 					playJumpAudio();
-					dragon.speedY = -23;
+					dragon.speedY = -30;
 				}
 
 				var isMusicPlaying = false;
@@ -280,7 +280,7 @@
 				if(dragon.y == 280)
 				{
 					playJumpAudio();
-					dragon.speedY = -23;
+					dragon.speedY = -30;
 				}
 
 				var isMusicPlaying = false;
