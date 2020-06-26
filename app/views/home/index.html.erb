@@ -5,8 +5,7 @@
 		</canvas>
 		<div style="text-align: center;">
 			<br><br>
-			<input style="height:40px; width:80px;" type="button" value="Jump" id="Jump">
-			<h3> Press <b>spacebar</b> or <b>jump</b> button </h3>
+			<h3> Press <b>spacebar</b> or <b>touch the screen </b> to jump </h3>
 			<h3> Use spacebar for better experience <h3>
 		</div>
 
@@ -16,7 +15,6 @@
 
 		<script type="text/javascript">
 			var canvas=document.getElementById("mycanvas");
-			var butt = document.getElementById("Jump")
 			var ctx= canvas.getContext("2d");
 			var width=700;
 			var height=320;
@@ -259,23 +257,7 @@
 			}
 
 			})
-				document.addEventListener("click",function(event) {
 
-				if(dragon.y == 280)
-				{
-					playJumpAudio();
-					dragon.speedY = -23;
-				}
-
-				var isMusicPlaying = false;
-
-			if(!isMusicPlaying){
-				isMusicPlaying=true;
-				if(flag)
-		    aud.play();
-			}
-
-			})
 				document.addEventListener("ontouchstart",function(event) {
 
 				if(dragon.y == 280)
