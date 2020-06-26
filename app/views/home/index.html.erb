@@ -263,7 +263,7 @@
 				if(dragon.y == 280)
 				{
 					playJumpAudio();
-					dragon.speedY = -30;
+					dragon.speedY = -35;
 				}
 
 				var isMusicPlaying = false;
@@ -275,12 +275,12 @@
 			}
 
 			})
-				document.addEventListener("ontouchstart",function(event) {
+				document.addEventListener("ontouchend",function(event) {
 
 				if(dragon.y == 280)
 				{
 					playJumpAudio();
-					dragon.speedY = -30;
+					dragon.speedY = -35;
 				}
 
 				var isMusicPlaying = false;
