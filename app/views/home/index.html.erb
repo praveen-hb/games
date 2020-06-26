@@ -3,13 +3,14 @@
 		<canvas width="700" height="320" style="margin-top: 30px;
 			display: block; margin: auto;" id="mycanvas">
 		</canvas>
-
+		<div style="text-align: center;"><br><br> <input style="height:30px" type="button" value="Jump" id="Jump"> </div>
 		<div style="text-align: center;"><b ><h2>Dragon Game <br><br><br><br><br><br><br><br></h2></b></div>
 
     <div style="text-align: center;"> <h3> A small game by Praveen Kumar </h3> </div>
 
 		<script type="text/javascript">
 			var canvas=document.getElementById("mycanvas");
+			var butt = document.getElementById("Jump")
 			var ctx= canvas.getContext("2d");
 			var width=700;
 			var height=320;
@@ -217,6 +218,27 @@
 
 
 			}
+
+
+
+			document.addEventListener("click",function(event) {
+
+				if(dragon.y == 280)
+				{
+					playJumpAudio();
+					dragon.speedY = -20;
+				}
+
+				var isMusicPlaying = false;
+			var audio = new Audio('https://d1490khl9dq1ow.cloudfront.net/audio/music/mp3preview/BsTwCwBHBjzwub4i4/isotope_fkjfprHu_WM.mp3');
+			if(!isMusicPlaying){
+				isMusicPlaying=true;
+
+		    audio.play();
+			}
+
+			})
+
 			document.addEventListener("keydown",function(event) {
 				if(event.keyCode == 32){
 				if(dragon.y == 280)
