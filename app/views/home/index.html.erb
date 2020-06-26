@@ -5,8 +5,9 @@
 		</canvas>
 		<div style="text-align: center;">
 			<br><br>
-			<input style="height:30px" type="button" value="Jump" id="Jump">
+			<input style="height:40px; width:80px;" type="button" value="Jump" id="Jump">
 			<h3> Press <b>spacebar</b> or <b>jump</b> button </h3>
+			<h3> Use spacebar for better experience <h3>
 		</div>
 
 		<div style="text-align: center;"><b ><h2><br><br><br><br><br><br><br><br>Dragon Game</h2></b></div>
@@ -87,7 +88,7 @@
 			hurdle.x=width;
 			hurdle.y=height - hurdle.height/2 - 15;
 			hurdle.isActive = true;
-			hurdle.speedX = -9;
+			hurdle.speedX = -12;
 			hurdle.speedY = 0;
 
 			hurdle.move = function(){
@@ -133,7 +134,7 @@
 		land.images = [landImage];
 		land.x= land.width/2;
 		land.y= height -25;
-		land.speedX = -4;
+		land.speedX = -12;
 		land.speedY = 0;
 		land.repeatX = 1;
 		land.move = function(){
@@ -160,8 +161,13 @@
 
 				var hurdle = getHurdle();
 				hurdles.push(hurdle);
+				if(land.speedX>-25)
+				land.speedX-=2
+
 				if(hurdlelimit>50)
 					hurdlelimit-=5
+				else
+				hurdlelimit+=50
 			}
 
 
@@ -186,6 +192,7 @@
 				clouds=newclouds;
 
 				land.move();
+
 				drawObject(land);
 
 				var hurdlesFinal = [];
@@ -216,6 +223,7 @@
 
 						}
 				}
+				hurdle.speedX=land.speedX
 				drawObject(hurdle);
 
 				if( hurdle.isActive == true){
@@ -229,23 +237,7 @@
 
 			var aud = new Audio('https://d1490khl9dq1ow.cloudfront.net/audio/music/mp3preview/BsTwCwBHBjzwub4i4/isotope_fkjfprHu_WM.mp3');
 			var flag=true;
-			document.addEventListener("click",function(event) {
 
-				if(dragon.y == 280)
-				{
-					playJumpAudio();
-					dragon.speedY = -23;
-				}
-
-				var isMusicPlaying = false;
-
-			if(!isMusicPlaying){
-				isMusicPlaying=true;
-				if(flag)
-		    aud.play();
-			}
-
-			})
 
 			document.addEventListener("keydown",function(event) {
 				if(event.keyCode == 32){
@@ -256,6 +248,23 @@
 				}
 			}
 			var isMusicPlaying = false;
+
+			if(!isMusicPlaying){
+				isMusicPlaying=true;
+				if(flag)
+		    aud.play();
+			}
+
+			})
+				document.addEventListener("click",function(event) {
+
+				if(dragon.y == 280)
+				{
+					playJumpAudio();
+					dragon.speedY = -23;
+				}
+
+				var isMusicPlaying = false;
 
 			if(!isMusicPlaying){
 				isMusicPlaying=true;
