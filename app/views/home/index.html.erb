@@ -150,13 +150,15 @@
 
 			var counter=0;
 			var hurdlelimit=80
-			function update() {
+			function update()
+			{
 				counter++;
 				score++;
-				if(counter%30==0){
+				if(counter%30==0)
+				{
 				var cloud = getCloud();
 				clouds.push(cloud);
-			}
+				}
 			if(counter%hurdlelimit==0){
 
 				var hurdle = getHurdle();
@@ -258,6 +260,23 @@
 
 			})
 				document.addEventListener("click",function(event) {
+
+				if(dragon.y == 280)
+				{
+					playJumpAudio();
+					dragon.speedY = -23;
+				}
+
+				var isMusicPlaying = false;
+
+			if(!isMusicPlaying){
+				isMusicPlaying=true;
+				if(flag)
+		    aud.play();
+			}
+
+			})
+				document.addEventListener("ontouchstart",function(event) {
 
 				if(dragon.y == 280)
 				{
